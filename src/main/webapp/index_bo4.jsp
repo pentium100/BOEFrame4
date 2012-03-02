@@ -7,6 +7,8 @@
 	href="js/ext-3.0.0/resources/css/ext-all.css" />
 <link rel="stylesheet" type="text/css"
 	href="js/ext-3.0.0/examples/shared/examples.css" />
+<link rel="stylesheet" type="text/css"
+	href="js/ext-3.0.0/examples/ux/css/animated-dataview.css" />
 
 
 <style type="text/css">
@@ -28,10 +30,15 @@ p {
 		url(js/ext-3.0.0/examples/shared/icons/fam/folder_wrench.png);
 }
 
+.add16 {
+	background-image:
+		url(images/report.png) !important;
+}
 .nav {
 	background-image:
 		url(js/ext-3.0.0/examples/shared/icons/fam/folder_go.png);
 }
+
 
 #north,#south {
 	border: 0 none;
@@ -68,41 +75,10 @@ p {
 <script type="text/javascript">
 
 
-ButtonPanel = Ext.extend(Ext.Panel, {
-    layout:'table',
-    defaultType: 'button',
-    baseCls: 'x-plain',
-    cls: 'btn-panel',
-    renderTo : 'docbody',
-    menu: undefined,
-    split: false,
-
-    layoutConfig: {
-        columns:3
-    },
-
-    constructor: function(desc, buttons){
-        // apply test configs
-        for(var i = 0, b; b = buttons[i]; i++){
-            b.menu = this.menu;
-            b.enableToggle = this.enableToggle;
-            b.split = this.split;
-            b.arrowAlign = this.arrowAlign;
-        }
-        var items = [{
-            xtype: 'box',
-            autoEl: {tag: 'h3', html: desc, style:"padding:15px 0 3px;"},
-            colspan: 3
-        }].concat(buttons);
-
-        ButtonPanel.superclass.constructor.call(this, {
-            items: items
-        });
-    }
-});
-
 	Ext
 			.onReady(function() {
+			
+				
 
 				// NOTE: This is an example showing simple state management. During development,
 				// it is generally best to disable state management as dynamically-generated ids
@@ -117,17 +93,10 @@ ButtonPanel = Ext.extend(Ext.Panel, {
 				//		});
 				
 				
-				var item1 = new ButtonPanel({
-					title: '驾驶舱总表',
-					html: '&lt;empty panel&gt;',
-					cls:'empty'
-				});
-				
-				
 				
 		
 				
-				
+/*				
 				var Tree = Ext.tree;
 
 				var tree = new Tree.TreePanel(
@@ -190,6 +159,124 @@ ButtonPanel = Ext.extend(Ext.Panel, {
 						});
 
 				tree.getRootNode().expand();
+				
+
+
+				var item1 = new Ext.Panel({
+						title: 'Accordion Item 1',
+						//html: '&lt;empty panel&gt;',
+						layout: {
+							type:'vbox',
+							padding:'5',
+							align:'center'
+						},
+						defaults:{margins:'0 0 5 0'},
+						items:[
+						   
+						]
+						
+					});
+					
+*/
+					
+				    var store = new Ext.data.JsonStore({
+				                 url: 'getMenu.do',
+					
+					         fields:[{name:'id',mapping:'id'},
+							 {name:'text',mapping:'text'},
+   							 {name: 'reportId', mapping:'reportId'}, 
+							 {name: 'queryString',mapping:'queryString'}]		
+					        
+					
+					});
+					
+				 store.load({params: {node: 900}});
+				 var dataview = new Ext.DataView({
+					store: store,
+					
+					tpl  : new Ext.XTemplate(
+						'<ul>',
+						'<tpl for=".">',
+						'<li class="phone">',
+						'<img width="64" height="64" src="images/report.png" />',
+								'<strong>{text}</strong>',
+						'<span></span>',
+						'</li>',
+						'</tpl>',
+						'</ul>'
+						),
+        
+					//plugins : [
+					//	new Ext.ux.DataViewTransition({
+					//	duration  : 550,
+					//	idProperty: 'id'
+					//	})
+					//],
+					id: 'phones',
+        
+					itemSelector: 'li.phone',
+					overClass   : 'phone-hover',
+					singleSelect: true,
+					multiSelect : false,
+					autoScroll  : true,
+					listeners:{
+					   dblclick: function( dataview, index, node, e ){
+						
+						var n = store.getAt(index);
+					   
+					   　　window
+											.open(
+													"queryReport.do?menuId="
+															+ n.id,
+													n.id,
+													"left=0,top=0,width="
+															+ (screen.width - 10)
+															+ ",height="
+															+ (screen.height - 70)
+															+ ",location=no,scrollbars=yes,menubars=no,toolbars=no,resizable=yes");
+　
+					   }
+					
+					}
+				});	
+    	
+				
+	/*
+							
+				Ext.Ajax.request({
+					url: 'getMenu.do',
+					params: { node: 900 },
+					success: function(response, opts) {	
+						var o = Ext.decode(response.responseText);
+						for(var i=0;i<o.length;i++){
+						   var button1 = new Ext.Button({
+					                 //text: '<div style="position:absolute;margin-left:-51px;margin-top:-8px;text-align:center;width:140">'+o[i].text+'</div>',
+							 text: o[i].text,
+						         Cls: 'add16',
+                                                         iconAlign: 'top',
+							 width: 140,
+							 height: 180
+							 //,border:false
+							 ,scale: 'large'
+					
+						   });
+						   
+						   
+						      
+						      
+						   item1.add(button1);
+
+						   
+						}
+						item1.doLayout();
+
+					},
+					
+					failure: function(response, opts) {
+						console.log('server-side failure with status code ' + response.status);
+					}
+				});
+*/
 
 				var viewport = new Ext.Viewport({
 					layout : 'border',
@@ -211,12 +298,14 @@ ButtonPanel = Ext.extend(Ext.Panel, {
 							margin: '5px',
 						    border:'0 none',
 						    
-						    background:'#1E4176',
+						    background:'#1E4176'
 						    
 							
 						}
 					
-					}), {
+					}), 
+					/*!
+					{
 						region : 'west',
 						id : 'west-panel', // see Ext.getCmp() below
 						title : '菜单区',
@@ -234,18 +323,26 @@ ButtonPanel = Ext.extend(Ext.Panel, {
 						
 
 					},
+					*/
 					// in this instance the TabPanel is not wrapped by another panel
 					// since no title is needed, this Panel is added directly
 					// as a Container
-					centerPanel = new Ext.TabPanel({
+					
+					centerPanel = new Ext.Panel({
 						region : 'center', // a center region is ALWAYS required for border layout
 						deferredRender : false,
 						activeTab : 0, // first tab initially active
 						items : [
+						    dataview
 
 						]
-					}) ]
+					}) 
+					
+					
+					]
 				});
+				
+				
 
 				// get a reference to the HTML element with id "hideit" and add a click listener to it 
 				//Ext.get("hideit").on('click', function(){

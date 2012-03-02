@@ -42,7 +42,7 @@
     <script type="text/javascript" src="js/ext-3.0.0/examples/shared/examples.js"></script>
     <script type="text/javascript" src="js/ext-3.0.0/examples/ux/miframe.js"></script>
     <link rel="stylesheet" type="text/css" href="js/ext-3.0.0/examples/ux/css/Select.css">
-	<script type="text/javascript" src="js/ext-3.0.0/examples/ux/Select.js"></script>
+    <script type="text/javascript" src="js/ext-3.0.0/examples/ux/Select.js"></script>
     
 
 <script type="text/javascript">
@@ -136,7 +136,9 @@ function getCookie(name)//取cookies函数
           Ext.Msg.alert('错误信息', errMsg );
        }
     
-    
+        Ext.getCmp("selectForm").toggleCollapse(true);
+        Ext.getCmp("SORiframe").setSrc("${openDocumentUrl}&token="+getCookie('LogonToken')+getUrl());
+
     }
 )
 

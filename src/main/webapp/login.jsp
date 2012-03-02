@@ -119,5 +119,5 @@ function doCheck(){
           <TD width="10">
             　</TD>
           <TD>厦门国贸集团股份有限公司版权所有<BR><SPAN class=bottomen>&copy; Copyright 1980 - 
-            2006. www.ITG.com.cn. All Rights Reserved. 
+            2012. www.ITG.com.cn. All Rights Reserved. 
       </SPAN><BR></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></BODY></HTML>
