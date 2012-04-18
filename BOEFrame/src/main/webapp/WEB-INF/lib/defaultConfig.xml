@@ -1,0 +1,530 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+ <!-- Settings for custom fonts for webintelligence report panel -->
+  <KEY VALUE="UI*default">
+    <CUSTOM_GUI_FONTS VALUE=""/>
+  </KEY>
+  <!-- Settings for default page layout for webintelligence report panel -->
+  <!-- Ex: A4,A5,LETTER... portrait or landscape -->
+  <KEY VALUE="page*default">
+    <FORMAT NAME="A4" ORIENTATION="portrait"/>
+    <RECORDS VERTICAL="100" HORIZONTAL="20"/>
+  </KEY>
+  <!-- Settings for free cells (not section cells) -->
+  <KEY VALUE="freeCell*default">
+    <STYLE>
+      <FONT FACE="Arial" SIZE="12" R="0" G="0" B="0" BOLD="yes"/>
+      <FONT xml:lang="ja" FACE="Gothic" SIZE="12" R="0" G="0" B="0" BOLD="yes"/>
+      <FONT xml:lang="ko" FACE="Gulim" SIZE="12" R="0" G="0" B="0" BOLD="yes"/>
+      <FONT xml:lang="zh-TW" FACE="MingLiU" SIZE="12" R="0" G="0" B="0" BOLD="yes"/>
+      <FONT xml:lang="zh-CN" FACE="SimSun" SIZE="12" R="0" G="0" B="0" BOLD="yes"/>
+      <BORDER SIDE="bottom" R="0" G="0" B="0" THICK="50" STYLE="plain"/>
+      <BORDER SIDE="top" R="0" G="0" B="0" THICK="0" STYLE="none"/>
+      <BORDER SIDE="left" R="0" G="0" B="0" THICK="0" STYLE="none"/>
+      <BORDER SIDE="right" R="0" G="0" B="0" THICK="0" STYLE="none"/>
+      <VALIGN VALUE="bottom"/>
+      <HALIGN VALUE="left"/>
+    </STYLE>
+    <SIZE WIDTH="4050" HEIGHT="775" PADDING="50" SPACING="0">
+    </SIZE>
+  </KEY>
+  <!-- Settings for section cells -->
+  <KEY VALUE="freeCell*section">
+    <STYLE>
+      <FONT FACE="Arial" SIZE="12" R="0" G="0" B="0" BOLD="yes"/>
+      <FONT xml:lang="ja" FACE="Gothic" SIZE="12" R="0" G="0" B="0" BOLD="yes"/>
+      <FONT xml:lang="ko" FACE="Gulim" SIZE="12" R="0" G="0" B="0" BOLD="yes"/>
+      <FONT xml:lang="zh-TW" FACE="MingLiU" SIZE="12" R="0" G="0" B="0" BOLD="yes"/>
+      <FONT xml:lang="zh-CN" FACE="SimSun" SIZE="12" R="0" G="0" B="0" BOLD="yes"/>
+      <BORDER SIDE="bottom" R="0" G="0" B="0" THICK="50" STYLE="plain"/>
+      <BORDER SIDE="top" R="0" G="0" B="0" THICK="0" STYLE="none"/>
+      <BORDER SIDE="left" R="0" G="0" B="0" THICK="0" STYLE="none"/>
+      <BORDER SIDE="right" R="0" G="0" B="0" THICK="0" STYLE="none"/>
+      <VALIGN VALUE="bottom"/>
+      <HALIGN VALUE="left"/>
+    </STYLE>
+   <SIZE WIDTH="8010" HEIGHT="900" PADDING ="50" SPACING="0">
+    </SIZE>
+  </KEY>
+  <!-- Settings for body cells in a table -->
+  <KEY VALUE="table*Body">
+    <STYLE>
+      <FONT FACE="Arial" SIZE="9" R="0" G="0" B="0" BOLD="no"/>
+      <FONT xml:lang="ja" FACE="Gothic" SIZE="10" R="0" G="0" B="0" BOLD="no"/>
+      <FONT xml:lang="ko" FACE="Gulim" SIZE="10" R="0" G="0" B="0" BOLD="no"/>
+      <FONT xml:lang="zh-TW" FACE="MingLiU" SIZE="10" R="0" G="0" B="0" BOLD="no"/>
+      <FONT xml:lang="zh-CN" FACE="SimSun" SIZE="10" R="0" G="0" B="0" BOLD="no"/>
+      <BACKGROUND R="255" G="255" B="255"/>
+      <BORDER SIDE="all"  R="202" G="201" B="217"  THICK="50" STYLE="plain"/>
+      <VALIGN VALUE="bottom" />
+      <HALIGN VALUE="left" />
+    </STYLE>
+  </KEY>
+  <!-- Settings for alternate body cells in a table -->
+  <KEY VALUE="table*AltBody">
+    <STYLE>
+      <BACKGROUND R="240" G="240" B="244"/>
+    </STYLE>
+  </KEY>
+  <KEY VALUE="table*AlternateStyle">
+    <STRING>true</STRING>
+  </KEY>
+  <!-- Settings for header cells in a table -->
+  <KEY VALUE="table*Header">
+    <STYLE>
+      <FONT FACE="Arial" SIZE="9" R="255" G="255" B="255" BOLD="yes"/>
+      <FONT xml:lang="ja" FACE="Gothic" SIZE="10" R="255" G="255" B="255" BOLD="yes"/>
+      <FONT xml:lang="ko" FACE="Gulim" SIZE="10" R="255" G="255" B="255" BOLD="yes"/>
+      <FONT xml:lang="zh-TW" FACE="MingLiU" SIZE="10" R="255" G="255" B="255" BOLD="yes"/>
+      <FONT xml:lang="zh-CN" FACE="SimSun" SIZE="10" R="255" G="255" B="255" BOLD="yes"/>
+      <BACKGROUND R="81" G="117" B="185"/>
+      <BORDER SIDE="all"  R="202" G="202" B="217"  THICK="50" STYLE="plain"/>
+      <VALIGN VALUE="bottom" />
+      <HALIGN VALUE="left"/>
+    </STYLE>
+  </KEY>
+  <!-- Settings for footer cells in a table -->
+  <KEY VALUE="table*Footer">
+    <STYLE>
+      <FONT FACE="Arial" SIZE="9" R="0" G="0" B="0" BOLD="no"/>
+      <FONT xml:lang="ja" FACE="Gothic" SIZE="10" R="0" G="0" B="0" BOLD="yes"/>
+      <FONT xml:lang="ko" FACE="Gulim" SIZE="10" R="0" G="0" B="0" BOLD="yes"/>
+      <FONT xml:lang="zh-TW" FACE="MingLiU" SIZE="10" R="0" G="0" B="0" BOLD="yes"/>
+      <FONT xml:lang="zh-CN" FACE="SimSun" SIZE="10" R="0" G="0" B="0" BOLD="yes"/>
+      <BACKGROUND R="255" G="255" B="255"/>
+      <BORDER SIDE="all"  R="202" G="201" B="217"  THICK="50" STYLE="plain"/>
+      <VALIGN VALUE="center"/>
+      <HALIGN VALUE="left"/>
+    </STYLE>
+  </KEY>
+  <!-- Settings for object name cells in a crosstable -->
+  <KEY VALUE="table*ExtraHeader">
+    <STYLE>
+      <FONT FACE="Arial" SIZE="10" R="90" G="91" B="105" BOLD="yes"/>
+      <FONT xml:lang="ja" FACE="Gothic" SIZE="10" R="90" G="91" B="105" BOLD="yes"/>
+      <FONT xml:lang="ko" FACE="Gulim" SIZE="10" R="90" G="91" B="105" BOLD="yes"/>
+      <FONT xml:lang="zh-TW" FACE="MingLiU" SIZE="10" R="90" G="91" B="105" BOLD="yes"/>
+      <FONT xml:lang="zh-CN" FACE="SimSun" SIZE="10" R="90" G="91" B="105" BOLD="yes"/>
+      <BACKGROUND R="255" G="255" B="255"/>
+      <BORDER SIDE="all"  R="202" G="201" B="217"  THICK="50" STYLE="plain"/>
+      <VALIGN VALUE="center"/>
+      <HALIGN VALUE="left"/>
+    </STYLE>
+  </KEY>
+  <!-- Settings for a table -->
+  <KEY VALUE="table*Table">
+    <STYLE>
+      <FONT FACE="Arial" SIZE="10" R="0" G="0" B="0" BOLD="no"/>
+      <FONT xml:lang="ja" FACE="Gothic" SIZE="10" R="0" G="0" B="0" BOLD="no"/>
+      <FONT xml:lang="ko" FACE="Gulim" SIZE="10" R="0" G="0" B="0" BOLD="no"/>
+      <FONT xml:lang="zh-TW" FACE="MingLiU" SIZE="10" R="0" G="0" B="0" BOLD="no"/>
+      <FONT xml:lang="zh-CN" FACE="SimSun" SIZE="10" R="0" G="0" B="0" BOLD="no"/>
+      <BORDER SIDE="all" R="0" G="0" B="0" THICK="0" STYLE="none"/>
+    </STYLE>
+    <SIZE WIDTH="4050" HEIGHT="900" PADDING ="75" SPACING="0">
+    </SIZE>
+  </KEY>
+  <!-- Settings for a Form -->
+  <KEY VALUE="table*Form">
+    <SIZE WIDTH="4050" HEIGHT="800" PADDING ="75" SPACING="75">
+    </SIZE>
+  </KEY>
+  <!-- Settings for body cells in a form -->
+  <KEY VALUE="table*BodyForm">
+    <STYLE>
+      <FONT FACE="Arial" SIZE="9" R="0" G="0" B="0" BOLD="no"/>
+      <FONT xml:lang="ja" FACE="Gothic" SIZE="10" R="0" G="0" B="0" BOLD="no"/>
+      <FONT xml:lang="ko" FACE="Gulim" SIZE="10" R="0" G="0" B="0" BOLD="no"/>
+      <FONT xml:lang="zh-TW" FACE="MingLiU" SIZE="10" R="0" G="0" B="0" BOLD="no"/>
+      <FONT xml:lang="zh-CN" FACE="SimSun" SIZE="10" R="0" G="0" B="0" BOLD="no"/>
+      <BACKGROUND R="240" G="240" B="244"/>
+      <BORDER SIDE="top"  R="255" G="255" B="255"  THICK="50" STYLE="plain"/>
+      <BORDER SIDE="left"  R="255" G="255" B="255"  THICK="50" STYLE="plain"/>
+      <BORDER SIDE="bottom"  R="202" G="201" B="217"  THICK="50" STYLE="plain"/>
+      <BORDER SIDE="right"  R="202" G="201" B="217"  THICK="50" STYLE="plain"/>
+      <VALIGN VALUE="bottom" />
+      <HALIGN VALUE="left" />
+    </STYLE>
+  </KEY>
+  <!-- Settings for header cells in a form -->
+  <KEY VALUE="table*HeaderForm">
+    <STYLE>
+      <FONT FACE="Arial" SIZE="9" R="255" G="255" B="255" BOLD="yes"/>
+      <FONT xml:lang="ja" FACE="Gothic" SIZE="10" R="255" G="255" B="255" BOLD="yes"/>
+      <FONT xml:lang="ko" FACE="Gulim" SIZE="10" R="255" G="255" B="255" BOLD="yes"/>
+      <FONT xml:lang="zh-TW" FACE="MingLiU" SIZE="10" R="255" G="255" B="255" BOLD="yes"/>
+      <FONT xml:lang="zh-CN" FACE="SimSun" SIZE="10" R="255" G="255" B="255" BOLD="yes"/>
+      <BACKGROUND R="81" G="117" B="185"/>
+      <BORDER SIDE="top"  R="255" G="255" B="255"  THICK="50" STYLE="plain"/>
+      <BORDER SIDE="left"  R="255" G="255" B="255"  THICK="50" STYLE="plain"/>
+      <BORDER SIDE="bottom"  R="99" G="99" B="132"  THICK="50" STYLE="plain"/>
+      <BORDER SIDE="right"  R="99" G="99" B="132"  THICK="50" STYLE="plain"/>
+      <VALIGN VALUE="bottom" />
+      <HALIGN VALUE="left"/>
+
+    </STYLE>
+  </KEY>
+  <!-- Settings for a Graph -->
+  <KEY VALUE="graph*Graph">
+    <STYLE>
+      <BORDER SIDE="all" R="0" G="0" B="0" THICK="0" STYLE="none"/>
+    </STYLE>
+  </KEY>
+  <KEY VALUE="graph*Wall">
+    <STYLE>
+      <BACKGROUND R="240" G="240" B="244"/>
+    </STYLE>
+  </KEY>
+  <KEY VALUE="graph*3DLook">
+    <STRING>true</STRING>
+  </KEY>
+  <KEY VALUE="graph*Data">
+    <STYLE>
+      <BORDER SIDE="all" R="0" G="0" B="0" THICK="0" STYLE="none"/>
+    </STYLE>
+  </KEY>
+  <!-- Palette used by graph -->
+  <KEY VALUE="graph*Palette*0">
+    <STYLE>
+      <BACKGROUND R="58" G="101" B="152"/>
+    </STYLE>
+  </KEY>
+  <KEY VALUE="graph*Palette*1">
+    <STYLE>
+      <BACKGROUND R="239" G="162" B="82"/>
+    </STYLE>
+  </KEY>
+  <KEY VALUE="graph*Palette*2">
+    <STYLE>
+      <BACKGROUND R="0" G="148" B="112"/>
+    </STYLE>
+  </KEY>
+  <KEY VALUE="graph*Palette*3">
+    <STYLE>
+      <BACKGROUND R="221" G="88" B="31"/>
+    </STYLE>
+  </KEY>
+  <KEY VALUE="graph*Palette*4">
+    <STYLE>
+      <BACKGROUND R="162" G="45" B="98"/>
+    </STYLE>
+  </KEY>
+  <KEY VALUE="graph*Palette*5">
+    <STYLE>
+      <BACKGROUND R="254" G="206" B="96"/>
+    </STYLE>
+  </KEY>
+  <KEY VALUE="graph*Palette*6">
+    <STYLE>
+      <BACKGROUND R="39" G="117" B="139"/>
+    </STYLE>
+  </KEY>
+  <KEY VALUE="graph*Palette*7">
+    <STYLE>
+      <BACKGROUND R="218" G="112" B="98"/>
+    </STYLE>
+  </KEY>
+  <KEY VALUE="graph*Palette*8">
+    <STYLE>
+      <BACKGROUND R="68" G="119" B="17"/>
+    </STYLE>
+  </KEY>
+  <KEY VALUE="graph*Palette*9">
+    <STYLE>
+      <BACKGROUND R="200" G="39" B="89"/>
+    </STYLE>
+  </KEY>
+  <KEY VALUE="graph*Palette*10">
+    <STYLE>
+      <BACKGROUND R="93" G="7" B="156"/>
+    </STYLE>
+  </KEY>
+  <KEY VALUE="graph*Palette*0">
+    <STYLE>
+      <BACKGROUND R="58" G="101" B="152"/>
+    </STYLE>
+  </KEY>
+  <KEY VALUE="graph*Palette*1">
+    <STYLE>
+      <BACKGROUND R="239" G="162" B="82"/>
+    </STYLE>
+  </KEY>
+  <KEY VALUE="graph*Palette*2">
+    <STYLE>
+      <BACKGROUND R="0" G="148" B="112"/>
+    </STYLE>
+  </KEY>
+  <KEY VALUE="graph*Palette*3">
+    <STYLE>
+      <BACKGROUND R="221" G="88" B="31"/>
+    </STYLE>
+  </KEY>
+  <KEY VALUE="graph*Palette*4">
+    <STYLE>
+      <BACKGROUND R="162" G="45" B="98"/>
+    </STYLE>
+  </KEY>
+  <KEY VALUE="graph*Palette*5">
+    <STYLE>
+      <BACKGROUND R="254" G="206" B="96"/>
+    </STYLE>
+  </KEY>
+  <KEY VALUE="graph*Palette*6">
+    <STYLE>
+      <BACKGROUND R="39" G="117" B="139"/>
+    </STYLE>
+  </KEY>
+  <KEY VALUE="graph*Palette*7">
+    <STYLE>
+      <BACKGROUND R="218" G="112" B="98"/>
+    </STYLE>
+  </KEY>
+  <KEY VALUE="graph*Palette*8">
+    <STYLE>
+      <BACKGROUND R="68" G="119" B="17"/>
+    </STYLE>
+  </KEY>
+  <KEY VALUE="graph*Palette*9">
+    <STYLE>
+      <BACKGROUND R="200" G="39" B="89"/>
+    </STYLE>
+  </KEY>
+  <KEY VALUE="graph*Palette*10">
+    <STYLE>
+      <BACKGROUND R="93" G="7" B="156"/>
+    </STYLE>
+  </KEY>
+  <KEY VALUE="graph*Palette*11">
+    <STYLE>
+      <BACKGROUND R="227" G="214" B="60"/>
+    </STYLE>
+  </KEY>
+  <KEY VALUE="graph*Palette*12">
+    <STYLE>
+      <BACKGROUND R="218" G="164" B="200"/>
+    </STYLE>
+  </KEY>
+  <KEY VALUE="graph*Palette*13">
+    <STYLE>
+      <BACKGROUND R="51" G="129" B="204"/>
+    </STYLE>
+  </KEY>
+  <KEY VALUE="graph*Palette*14">
+    <STYLE>
+      <BACKGROUND R="241" G="194" B="131"/>
+    </STYLE>
+  </KEY>
+  <KEY VALUE="graph*Palette*15">
+    <STYLE>
+      <BACKGROUND R="164" G="119" B="52"/>
+    </STYLE>
+  </KEY>
+  <KEY VALUE="graph*Palette*16">
+    <STYLE>
+      <BACKGROUND R="146" G="186" B="227"/>
+    </STYLE>
+  </KEY>
+  <KEY VALUE="graph*Palette*17">
+    <STYLE>
+      <BACKGROUND R="182" G="61" B="50"/>
+    </STYLE>
+  </KEY>
+  <KEY VALUE="graph*Palette*18">
+    <STYLE>
+      <BACKGROUND R="52" G="206" B="145"/>
+    </STYLE>
+  </KEY>
+  <KEY VALUE="graph*Palette*19">
+    <STYLE>
+      <BACKGROUND R="255" G="122" B="89"/>
+    </STYLE>
+  </KEY>
+  <KEY VALUE="graph*Palette*20">
+    <STYLE>
+      <BACKGROUND R="192" G="89" B="160"/>
+    </STYLE>
+  </KEY>
+  <KEY VALUE="graph*Palette*21">
+    <STYLE>
+      <BACKGROUND R="131" G="241" B="160"/>
+    </STYLE>
+  </KEY>
+  <KEY VALUE="graph*Palette*22">
+    <STYLE>
+      <BACKGROUND R="56" G="179" B="184"/>
+    </STYLE>
+  </KEY>
+  <KEY VALUE="graph*Palette*23">
+    <STYLE>
+      <BACKGROUND R="236" G="178" B="137"/>
+    </STYLE>
+  </KEY>
+  <KEY VALUE="graph*Palette*24">
+    <STYLE>
+      <BACKGROUND R="165" G="67" B="56"/>
+    </STYLE>
+  </KEY>
+  <KEY VALUE="graph*Palette*25">
+    <STYLE>
+      <BACKGROUND R="146" G="209" B="227"/>
+    </STYLE>
+  </KEY>
+  <KEY VALUE="graph*Palette*26">
+    <STYLE>
+      <BACKGROUND R="134" G="27" B="54"/>
+    </STYLE>
+  </KEY>
+  <KEY VALUE="graph*Palette*27">
+    <STYLE>
+      <BACKGROUND R="161" G="187" B="98"/>
+    </STYLE>
+  </KEY>
+  <KEY VALUE="graph*Palette*28">
+    <STYLE>
+      <BACKGROUND R="236" G="137" B="168"/>
+    </STYLE>
+  </KEY>
+  <KEY VALUE="graph*Palette*29">
+    <STYLE>
+      <BACKGROUND R="143" G="60" B="204"/>
+    </STYLE>
+  </KEY>
+  <KEY VALUE="graph*Palette*30">
+    <STYLE>
+      <BACKGROUND R="193" G="236" B="116"/>
+    </STYLE>
+  </KEY>
+  <KEY VALUE="graph*Palette*31">
+    <STYLE>
+      <BACKGROUND R="183" G="164" B="212"/>
+    </STYLE>
+  </KEY>
+
+  <!-- Settings for X axis values in a graph -->
+  <KEY VALUE="graph*XValues">
+    <STYLE>
+      <FONT FACE="Arial" SIZE="8" R="0" G="0" B="0"/>
+      <FONT xml:lang="ja" FACE="Gothic" SIZE="10" R="0" G="0" B="0"/>
+      <FONT xml:lang="ko" FACE="Gulim" SIZE="10" R="0" G="0" B="0"/>
+      <FONT xml:lang="zh-TW" FACE="MingLiU" SIZE="10" R="0" G="0" B="0"/>
+      <FONT xml:lang="zh-CN" FACE="SimSun" SIZE="10" R="0" G="0" B="0"/>
+      <VALIGN VALUE="center"/>
+      <HALIGN VALUE="center"/>
+    </STYLE>
+  </KEY>
+  <KEY VALUE="graph*XGrid">
+    <STYLE>
+      <BORDER SIDE="all" R="179" G="179" B="201" THICK="50" STYLE="none"/>
+    </STYLE>
+  </KEY>
+  <!-- Settings for Y axis values in a graph -->
+  <KEY VALUE="graph*YValues">
+    <STYLE>
+      <FONT FACE="Arial" SIZE="8" R="0" G="0" B="0"/>
+      <FONT xml:lang="ja" FACE="Gothic" SIZE="10" R="0" G="0" B="0"/>
+      <FONT xml:lang="ko" FACE="Gulim" SIZE="10" R="0" G="0" B="0"/>
+      <FONT xml:lang="zh-TW" FACE="MingLiU" SIZE="10" R="0" G="0" B="0"/>
+      <FONT xml:lang="zh-CN" FACE="SimSun" SIZE="10" R="0" G="0" B="0"/>
+      <VALIGN VALUE="center"/>
+      <HALIGN VALUE="center"/>
+    </STYLE>
+  </KEY>
+  <KEY VALUE="graph*YGrid">
+    <STYLE>
+      <BORDER SIDE="all" R="179" G="179" B="201" THICK="50" STYLE="plain"/>
+    </STYLE>
+  </KEY>
+  <!-- Settings for Z axis values in a graph -->
+  <KEY VALUE="graph*ZValues">
+    <STYLE>
+      <FONT FACE="Arial" SIZE="8" R="0" G="0" B="0"/>
+      <FONT xml:lang="ja" FACE="Gothic" SIZE="10" R="0" G="0" B="0"/>
+      <FONT xml:lang="ko" FACE="Gulim" SIZE="10" R="0" G="0" B="0"/>
+      <FONT xml:lang="zh-TW" FACE="MingLiU" SIZE="10" R="0" G="0" B="0"/>
+      <FONT xml:lang="zh-CN" FACE="SimSun" SIZE="10" R="0" G="0" B="0"/>
+      <VALIGN VALUE="center"/>
+      <HALIGN VALUE="center"/>
+    </STYLE>
+  </KEY>
+  <KEY VALUE="graph*ZGrid">
+    <STYLE>
+      <BORDER SIDE="all" R="179" G="179" B="201" THICK="50" STYLE="none"/>
+    </STYLE>
+  </KEY>
+  <!-- Settings for X axis labels in a graph -->
+  <KEY VALUE="graph*XLabels">
+    <STYLE>
+      <FONT FACE="Arial" SIZE="10" R="0" G="0" B="0" BOLD="yes"/>
+      <FONT xml:lang="ja" FACE="Gothic" SIZE="10" R="0" G="0" B="0"/>
+      <FONT xml:lang="ko" FACE="Gulim" SIZE="10" R="0" G="0" B="0"/>
+      <FONT xml:lang="zh-TW" FACE="MingLiU" SIZE="10" R="0" G="0" B="0"/>
+      <FONT xml:lang="zh-CN" FACE="SimSun" SIZE="10" R="0" G="0" B="0"/>
+      <VALIGN VALUE="center"/>
+      <HALIGN VALUE="center"/>
+    </STYLE>
+  </KEY>
+  <!-- Settings for Y axis labels in a graph -->
+  <KEY VALUE="graph*YLabels">
+    <STYLE>
+      <FONT FACE="Arial" SIZE="10" R="0" G="0" B="0" BOLD="yes"/>
+      <FONT xml:lang="ja" FACE="Gothic" SIZE="10" R="0" G="0" B="0"/>
+      <FONT xml:lang="ko" FACE="Gulim" SIZE="10" R="0" G="0" B="0"/>
+      <FONT xml:lang="zh-TW" FACE="MingLiU" SIZE="10" R="0" G="0" B="0"/>
+      <FONT xml:lang="zh-CN" FACE="SimSun" SIZE="10" R="0" G="0" B="0"/>
+      <VALIGN VALUE="center"/>
+      <HALIGN VALUE="center"/>
+    </STYLE>
+  </KEY>
+  <!-- Settings for Z axis labels in a graph -->
+  <KEY VALUE="graph*ZLabels">
+    <STYLE>
+      <FONT FACE="Arial" SIZE="10" R="0" G="0" B="0" BOLD="yes"/>
+      <FONT xml:lang="ja" FACE="Gothic" SIZE="10" R="0" G="0" B="0"/>
+      <FONT xml:lang="ko" FACE="Gulim" SIZE="10" R="0" G="0" B="0"/>
+      <FONT xml:lang="zh-TW" FACE="MingLiU" SIZE="10" R="0" G="0" B="0"/>      
+      <FONT xml:lang="zh-CN" FACE="SimSun" SIZE="10" R="0" G="0" B="0"/>    
+      <VALIGN VALUE="center"/>
+      <HALIGN VALUE="center"/>
+    </STYLE>
+  </KEY>
+  <!-- Settings for Section  -->
+  <KEY VALUE="Section*background">
+    <STYLE>
+      <FONT FACE="Arial" SIZE="10" R="0" G="0" B="0" BOLD="no"/>
+      <FONT xml:lang="ja" FACE="Gothic" SIZE="10" R="0" G="0" B="0" BOLD="no"/>
+      <FONT xml:lang="ko" FACE="Gulim" SIZE="10" R="0" G="0" B="0" BOLD="no"/>
+      <FONT xml:lang="zh-TW" FACE="MingLiU" SIZE="10" R="0" G="0" B="0" BOLD="no"/>
+      <FONT xml:lang="zh-CN" FACE="SimSun" SIZE="10" R="0" G="0" B="0" BOLD="no"/>
+    </STYLE>
+  </KEY>
+  <!-- Settings for background colors for blocks -->
+  <KEY VALUE="Block*defaultBg">
+    <COLOR R="225" G="225" B="225"/>
+  </KEY>
+  <!-- Settings Default Skins background per report element type -->
+  <KEY VALUE="cell_skin0,report_skin0,section_skin0,bloc_skin0">
+    <SKIN NAME="Curve" TYPE="tile">
+			boimg://skin_marble.gif
+		</SKIN>
+  </KEY>
+  <KEY VALUE="cell_skin1,section_skin1,bloc_skin1">
+    <SKIN NAME="Business Objects" TYPE="stretch">
+			boimg://skin_bo.gif
+		</SKIN>
+  </KEY>
+  <KEY VALUE="cell_skin2,report_skin1,section_skin2,bloc_skin2">
+    <SKIN NAME="Dots" TYPE="tile">
+			boimg://skin_listing.gif
+		</SKIN>
+  </KEY>
+  <KEY VALUE="cell_skin3,report_skin2,section_skin3,bloc_skin3">
+    <SKIN NAME="Draft" TYPE="tile">
+			boimg://skin_draft.jpg
+		</SKIN>
+  </KEY>
+  <KEY VALUE="cell_skin4,report_skin3,section_skin4,bloc_skin4">
+    <SKIN NAME="Final Copy" TYPE="tile">
+			boimg://skin_finalcopy.jpg
+		</SKIN>
+  </KEY>
+</CONFIG>
