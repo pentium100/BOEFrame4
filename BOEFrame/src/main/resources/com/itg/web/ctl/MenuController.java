@@ -1,4 +1,5 @@
 package com.itg.web.ctl;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -31,12 +32,10 @@ import com.itg.dao.MenuItem;
 public class MenuController {
 	private String viewName;
 
-
 	private IMenuItemDAO menuItemDAO;
 
-	
 	private IUserRolesDAO userRolesDAO;
-	
+
 	public IUserRolesDAO getUserRolesDAO() {
 		return userRolesDAO;
 	}
@@ -44,10 +43,9 @@ public class MenuController {
 	public void setUserRolesDAO(IUserRolesDAO userRolesDAO) {
 		this.userRolesDAO = userRolesDAO;
 	}
-	
+
 	private IRolesDAO rolesDAO;
-	
-	
+
 	public IRolesDAO getRolesDAO() {
 		return rolesDAO;
 	}
@@ -56,114 +54,104 @@ public class MenuController {
 		this.rolesDAO = rolesDAO;
 	}
 
+	// 在ascweb-servlet.xml里配置的,该属性已经被注入userDAOProxy接口了
 
-//在ascweb-servlet.xml里配置的,该属性已经被注入userDAOProxy接口了
+	public IMenuItemDAO getMenuItemDAO() {
 
-    public IMenuItemDAO getMenuItemDAO() {
+		return menuItemDAO;
 
-         return menuItemDAO;
+	}
 
-    }
+	public void setMenuItemDAO(IMenuItemDAO menuItemDAO) {
 
-    public void setMenuItemDAO(IMenuItemDAO menuItemDAO) {
+		this.menuItemDAO = menuItemDAO;
 
-         this.menuItemDAO = menuItemDAO;
+	}
 
-    }
+	public String getViewName() {
 
-    public String getViewName() {
+		return viewName;
 
-         return viewName;
+	}
 
-    }
+	public void setViewName(String viewName) {
 
-    public void setViewName(String viewName) {
+		this.viewName = viewName;
 
-         this.viewName = viewName;
+	}
 
-    }
+	// 注解其url映射
 
-    
+	@SuppressWarnings("unchecked")
+	@RequestMapping("/getMenu.do")
+	public String index(ModelMap map, HttpServletRequest request,
+			HttpServletResponse response) {
 
-//注解其url映射
+		// map是用来设置View层数据的
+		MenuItem parent = menuItemDAO.selectMenuItemByID(Integer
+				.parseInt(request.getParameter("node")));
 
-    @SuppressWarnings("unchecked")
-    @RequestMapping("/getMenu.do") 
-    public String index(ModelMap map,HttpServletRequest request,HttpServletResponse response) {
+		List<MenuItem> l = menuItemDAO.selectMenuItem(parent);
 
-         // map是用来设置View层数据的
-     	 MenuItem parent = menuItemDAO.selectMenuItemByID(Integer.parseInt(request.getParameter("node")));
-     	 
-     	 
+		ArrayList al = new ArrayList();
+		String userName = request.getUserPrincipal().getName();
+		// Logger logger = Logger.getLogger(this.getClass().toString());
+		// logger.info("User Principal: " +
+		// request.getUserPrincipal().getName());
 
-         List<MenuItem> l = menuItemDAO.selectMenuItem(parent);
-         
-         
-         ArrayList al = new ArrayList();
-         String userName = request.getUserPrincipal().getName();
- 		//Logger logger = Logger.getLogger(this.getClass().toString());
- 		//logger.info("User Principal: " + request.getUserPrincipal().getName());
- 		
- 		Pattern pp = Pattern.compile("CN=(\\w+)");
- 		
- 		Matcher matcher = pp.matcher(userName);
- 		
-         List<UserRole> urs = userRolesDAO.findRolesByID(userName);
-         
- 		List<String> authValue = new ArrayList<String>();
- 		List<String> roles = new ArrayList<String>();
- 		
- 		for(int i = 0; i<urs.size();i++){
- 			roles.add(urs.get(i).getRole());
- 			
- 		}
+		Pattern pp = Pattern.compile("CN=(\\w+)");
 
- 		
- 		
-         
-         for(int i=0; i<l.size();i++){
-        	 
-        	authValue.clear();
-     		authValue.add(String.valueOf(l.get(i).getID()));
-    		
-    		List<String> menuList =  rolesDAO.findAuthValue(roles, "MENUS", authValue);
-    		
-    		if (menuList.size()==0){
-    			continue;
-    		}
-    				
+		Matcher matcher = pp.matcher(userName);
 
-        	 
-        	 Map m = new HashMap();
-        	 
-        	 m.put("text", l.get(i).getMenuText());
-        	 m.put("leaf", l.get(i).isLeaf());
-        	 m.put("images", l.get(i).getImages());
-        	 
-        	 if (l.get(i).isLeaf()){
-        		 m.put("cls", "file");
-        	 }
-        	 else
-        	 {
-        		 m.put("cls", "folder");
-        	 }
-        	  
-        	 m.put("id", l.get(i).getID());
-        	 m.put("reportId", l.get(i).getReportId());
-        	 m.put("queryString", l.get(i).getQueryString());
-        	 al.add(m);
-        	 
-        	 
-        	 
-         }
-         
-         JSONArray json =  JSONArray.fromObject(al);
-         map.put("menuList", json);
-         
+		List<UserRole> urs = userRolesDAO.findRolesByID(userName);
 
-         return this.viewName;  //该属性被注入值hello了,就是渲染视图hello.jsp
+		List<String> authValue = new ArrayList<String>();
+		List<String> roles = new ArrayList<String>();
 
-    }
+		for (int i = 0; i < urs.size(); i++) {
+			roles.add(urs.get(i).getRole());
 
+		}
+
+		for (int i = 0; i < l.size(); i++) {
+
+			authValue.clear();
+			authValue.add(String.valueOf(l.get(i).getID()));
+
+			if (l.get(i).isLeaf()) {
+
+				List<String> menuList = rolesDAO.findAuthValue(roles, "MENUS",
+						authValue);
+
+				if (menuList.size() == 0) {
+					continue;
+				}
+			}
+
+			Map m = new HashMap();
+
+			m.put("text", l.get(i).getMenuText());
+			m.put("leaf", l.get(i).isLeaf());
+			m.put("images", l.get(i).getImages());
+
+			if (l.get(i).isLeaf()) {
+				m.put("cls", "file");
+			} else {
+				m.put("cls", "folder");
+			}
+
+			m.put("id", l.get(i).getID());
+			m.put("reportId", l.get(i).getReportId());
+			m.put("queryString", l.get(i).getQueryString());
+			al.add(m);
+
+		}
+
+		JSONArray json = JSONArray.fromObject(al);
+		map.put("menuList", json);
+
+		return this.viewName; // 该属性被注入值hello了,就是渲染视图hello.jsp
+
+	}
 
 }
