@@ -55,6 +55,7 @@ function getCookie(name)//取cookies函数
 }
     Ext.onReady(function(){
     	window.focus();
+    	Ext.BLANK_IMAGE_URL = 'js/ext-3.0.0/resources/images/default/s.gif';
         var viewport = new Ext.Viewport({
             layout: 'border',
             renderTo: 'reportResult',
@@ -82,6 +83,7 @@ function getCookie(name)//取cookies函数
                 
                 //autoScroll:true, 
                 //closable: true, 
+                
                 hidden: ${hideForm},
                 id: 'selectForm', 
                 //split: true,
@@ -115,13 +117,15 @@ function getCookie(name)//取cookies函数
                 activeTab: 0,     // first tab initially active
                 layout: 'fit',
                 resizable:true, 
+                header: false,
                 //title: "查询结果",
                 items: [
                 	{
         			xtype : 'iframepanel',
         			id : 'SORiframe',
         			frame: false,
-        			loadMask : true
+        			loadMask : false
+        			
         			,defaultSrc:  "${defOpenDocumentUrl}
         			//defaultSrc: '${defOpenDocumentUrl}'
     　　　　　			}
@@ -136,6 +140,9 @@ function getCookie(name)//取cookies函数
           Ext.Msg.alert('错误信息', errMsg );
        }
     
+       Ext.getCmp("selectForm").toggleCollapse(true);
+       Ext.getCmp("SORiframe").setSrc("${openDocumentUrl}&token="+getCookie('LogonToken')+getUrl());
+
     
     }
 )

@@ -67,6 +67,7 @@ p {
 <!-- EXAMPLES -->
 <script type="text/javascript"
 	src="js/ext-3.0.0/examples/shared/examples.js"></script>
+
 <script type="text/javascript" src="js/ext-3.0.0/examples/ux/miframe.js"></script>
 
 
@@ -79,7 +80,7 @@ p {
 			.onReady(function() {
 			
 				
-
+				Ext.BLANK_IMAGE_URL = 'js/ext-3.0.0/resources/images/default/s.gif';
 				// NOTE: This is an example showing simple state management. During development,
 				// it is generally best to disable state management as dynamically-generated ids
 				// can change across page loads, leading to unpredictable results.  The developer
