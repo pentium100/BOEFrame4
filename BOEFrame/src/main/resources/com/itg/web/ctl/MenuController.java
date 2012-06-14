@@ -1,6 +1,8 @@
 package com.itg.web.ctl;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -27,6 +29,7 @@ import com.itg.dao.IUserRolesDAO;
 import com.itg.dao.UserRole;
 
 import com.itg.dao.MenuItem;
+import com.itg.util.MenuItemComparator;
 
 @Controller
 public class MenuController {
@@ -146,6 +149,9 @@ public class MenuController {
 			al.add(m);
 
 		}
+
+		Comparator<Map> comp = new MenuItemComparator();
+		Collections.sort(al, comp);
 
 		JSONArray json = JSONArray.fromObject(al);
 		map.put("menuList", json);
