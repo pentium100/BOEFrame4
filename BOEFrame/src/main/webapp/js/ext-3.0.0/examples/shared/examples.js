@@ -4,8 +4,9 @@
  * licensing@sencha.com
  * http://www.sencha.com/license
  */
-Ext.BLANK_IMAGE_URL = '../../resources/images/default/s.gif';
 
+//Ext.BLANK_IMAGE_URL = '../../resources/images/default/s.gif';
+Ext.BLANK_IMAGE_URL = 'js/ext-3.0.0/resources/images/default/s.gif';
 Ext.example = function(){
     var msgCt;
 

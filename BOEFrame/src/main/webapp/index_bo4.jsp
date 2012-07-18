@@ -31,14 +31,13 @@ p {
 }
 
 .add16 {
-	background-image:
-		url(images/report.png) !important;
+	background-image: url(images/report.png) !important;
 }
+
 .nav {
 	background-image:
 		url(js/ext-3.0.0/examples/shared/icons/fam/folder_go.png);
 }
-
 
 #north,#south {
 	border: 0 none;
@@ -195,7 +194,7 @@ p {
 				 store.load({params: {node: 900}});
 				 var dataview = new Ext.DataView({
 					store: store,
-					
+					autoScroll: true,
 					tpl  : new Ext.XTemplate(
 						'<ul>',
 						'<tpl for=".">',
@@ -334,6 +333,7 @@ p {
 						region : 'center', // a center region is ALWAYS required for border layout
 						deferredRender : false,
 						activeTab : 0, // first tab initially active
+						autoScroll: true,
 						items : [
 						    dataview
 
